@@ -189,7 +189,7 @@ Router.patch(
 			if (hasErrors.isEmpty()) {
 				const {error, message, data} = await CategoryController.updateCategory(
 					request?.params?.categoryNo,
-					request?.body.logged_user
+					request?.body
 				);
 
 				if (!isEmpty(data) && error === false) {

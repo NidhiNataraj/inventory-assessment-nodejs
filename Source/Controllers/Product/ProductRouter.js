@@ -62,7 +62,7 @@ Router.patch(
 			if (hasErrors.isEmpty()) {
 				const {error, message, data} = await ProductController.updateProduct(
 					request?.params?.productNo,
-					request?.body.logged_user
+					request?.body
 				);
 
 				if (!isEmpty(data) && error === false) {

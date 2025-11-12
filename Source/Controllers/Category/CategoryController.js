@@ -188,17 +188,17 @@ const CategoryController = {
 		}
 	},
 
-	updateCategory: async(categoryNo, loggedUser) => {
+	updateCategory: async(categoryNo, data) => {
 		try {
 			const getCategory = await CategoryModel.findOne(
-				{category_no: categoryNo, user_no: loggedUser?.user_no, deleted: false},
-				{_id: 0, __v:0}
+				{category_no: categoryNo, user_no: data?.logged_user?.user_no, deleted: false},
+				{name: 1, description: 1}
 			);
-			if (Utils?.isEmpty(getProduct)) {
+			if (Utils?.isEmpty(getCategory)) {
 				logger.error({
 					functionName: 'updateCategory',
 					message: 'Category not found',
-					data: {categoryNo, loggedUser}
+					data: {categoryNo, data}
 				});
 				return {error: true, message: 'Category not found'};
 			}
@@ -236,7 +236,6 @@ const CategoryController = {
 			return {error: true, message: 'Something went wrong'};
 		}		
 	}
-
 
 };
 module.exports = CategoryController;

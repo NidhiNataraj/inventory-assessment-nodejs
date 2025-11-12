@@ -402,17 +402,16 @@ const ProductController = {
 		}
 	},
 
-	updateProduct: async (productNo, loggedUser) => {
+	updateProduct: async (productNo, data) => {
 		try {
 			const getProduct = await ProductModel.findOne(
-				{category_id: categoryNo, product_no: productNo, user_id: loggedUser?.user_no, deleted: false},
-				{_id: 0, __v:0}
+				{category_id: data?.category_id, product_no: productNo, user_id: data?.logged_user?.user_no, deleted: false}
 			);
 			if (Utils?.isEmpty(getProduct)) {
 				logger.error({
 					functionName: 'updateProduct',
 					message: 'Product not found',
-					data: {productNo, loggedUser}
+					data: {productNo, data}
 				});
 				return {error: true, message: 'Product not found'};
 			}
