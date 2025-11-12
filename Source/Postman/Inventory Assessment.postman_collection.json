@@ -1,0 +1,946 @@
+{
+	"info": {
+		"_postman_id": "e39b6188-31bd-4687-ac1a-790e602d635e",
+		"name": "Inventory Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34588020",
+		"_collection_link": "https://galactic-moon-547280.postman.co/workspace/My-Workspace~45edc523-5ee0-4a1c-8b06-180e35f92cbd/collection/34588020-e39b6188-31bd-4687-ac1a-790e602d635e?action=share&source=collection_link&creator=34588020"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "New admin login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/user/admin-login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"user",
+								"admin-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzN2M1NDY1ZWNhOGMyMWE3NzQwY2UiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2Mjg4NjA5NSwiZXhwIjoxNzYyODg5Njk1fQ.UTEDiS9iC2bEsA-Rqly_RLA5LrH8LHYznD52k9KrtIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-consumer-username",
+								"value": "MER0001673345706",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "platform",
+								"value": "web",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"userTwo\",\r\n    \"email\": \"userTwo@gmail.com\",\r\n    \"password\": \"userTwo@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createCustomer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-consumer-username",
+										"value": "MER0001673345706",
+										"type": "text"
+									},
+									{
+										"key": "platform",
+										"value": "web",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"merchant_id\":\"MER0001673345706\",\r\n\"cus_type\":\"business\",\r\n\"name\":\r\n{\r\n    \"first\":\"udhay1 test\",\r\n    \"display\":\"foloosi\",\r\n    \"last\":\"kumar\"\r\n    },\r\n    \"company\":{\r\n        \"name\":\"foloosi\"\r\n        },\r\n    \"email\":\"coder@foloosi.com\",\r\n    \"phone\":\"8124273963\",\r\n    \"currency\":\"AED\",\r\n    \"address\":{\r\n        \"billing\":\r\n        {\"line_1\":\"guindy\",\"line_2\":\"guindy\",\"city\":{\"name\":\"El Abadia\",\"id\":31325},\"zipcode\":\"602001\",\"country\":{\"name\":\"Algeria\",\"id\":4},\"state\":{\"name\":\"Aïn Defla\",\"id\":1119}},\r\n        \"shipping\":{\"line_1\":\"guindy\",\"line_2\":\"guindy\",\"city\":{\"name\":\"El Amria\",\"id\":31329},\"zipcode\":\"602001\",\"country\":{\"name\":\"Algeria\",\"id\":4},\"state\":{\"name\":\"Aïn Témouchent\",\"id\":1122}\r\n        },\"is_same_billing\":false},\"additional\":{\"mobile\":\"8124273963\",\"fax\":\"no\",\"website\":\"www.foloosi.com\",\"notes\":\"yes\"\r\n        },\r\n        \"tax_vat_no\":\"123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/invoice/customer/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"invoice",
+										"customer",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Dec 2023 08:30:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.18 (Ubuntu)"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2202"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer added successfully\",\n    \"data\": {\n        \"customer\": {\n            \"__v\": 0,\n            \"createdAt\": \"2023-12-09T08:30:52.301Z\",\n            \"updatedAt\": \"2023-12-09T08:30:52.301Z\",\n            \"merchant_id\": \"MER0001673345706\",\n            \"email\": \"coder@foloosi.com\",\n            \"phone\": \"8124273963\",\n            \"customer_id\": \"CUS000Pn8mPEdTT\",\n            \"_id\": \"657425bcaff57c000702149b\",\n            \"additional\": {\n                \"mobile\": \"8124273963\",\n                \"fax\": \"no\",\n                \"website\": \"www.foloosi.com\",\n                \"notes\": \"yes\"\n            },\n            \"address\": {\n                \"is_same_billing\": false,\n                \"shipping\": {\n                    \"line_1\": \"guindy\",\n                    \"line_2\": \"guindy\",\n                    \"zipcode\": \"602001\",\n                    \"state\": {\n                        \"name\": \"Aïn Témouchent\",\n                        \"id\": \"1122\"\n                    },\n                    \"country\": {\n                        \"name\": \"Algeria\",\n                        \"id\": \"4\"\n                    },\n                    \"city\": {\n                        \"name\": \"El Amria\",\n                        \"id\": \"31329\"\n                    }\n                },\n                \"billing\": {\n                    \"line_1\": \"guindy\",\n                    \"line_2\": \"guindy\",\n                    \"zipcode\": \"602001\",\n                    \"state\": {\n                        \"name\": \"Aïn Defla\",\n                        \"id\": \"1119\"\n                    },\n                    \"country\": {\n                        \"name\": \"Algeria\",\n                        \"id\": \"4\"\n                    },\n                    \"city\": {\n                        \"name\": \"El Abadia\",\n                        \"id\": \"31325\"\n                    }\n                }\n            },\n            \"tax_vat_no\": \"123\",\n            \"currency\": \"AED\",\n            \"company\": {\n                \"name\": \"foloosi\"\n            },\n            \"name\": {\n                \"first\": \"udhay1 test\",\n                \"last\": \"kumar\",\n                \"display\": \"foloosi\"\n            },\n            \"cus_type\": \"business\"\n        }\n    }\n}"
+						},
+						{
+							"name": "createCustomer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-consumer-username",
+										"value": "MER0001673345706",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "platform",
+										"value": "web",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"adminUser\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/inventory/user/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"inventory",
+										"user",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"164-axsTIQERTUzJYy9HWtOhjMHNAkw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:11:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"User created\",\n    \"data\": {\n        \"user\": {\n            \"user_no\": \"USRE2RxT6DRqrOBp\",\n            \"email\": \"admin@gmail.com\",\n            \"password\": \"$2b$10$rEGMRTt2yyCDxD80DEgke.pKAnRaxP2j2oG.WDzD7KQxmOKGYJIWO\",\n            \"name\": \"adminUser\",\n            \"role\": \"user\",\n            \"_id\": \"69137c5465eca8c21a7740ce\",\n            \"deleted\": false,\n            \"updatedAt\": \"2025-11-11T18:11:32.905Z\",\n            \"createdAt\": \"2025-11-11T18:11:32.905Z\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"usertwo@gmail.com\",\r\n    \"password\":\"userTwo@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"userOne@gmail.com\",\r\n    \"password\":\"userOne@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/inventory/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"inventory",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "358"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"166-o11oHztVnP6ZXr2Z6/7u4x3csnQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 11 Nov 2025 18:43:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODFkZTk2NWE2OWI3ZDZmZDgyOTMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2Mjg4NjU4OSwiZXhwIjoxNzYyODkwMTg5fQ.dp2Tb2zV-MoEHhu8PXT25H6YliYwh4s9_SCoBvBQh_s\",\n        \"user\": {\n            \"id\": \"691381de965a69b7d6fd8293\",\n            \"name\": \"userOne\",\n            \"email\": \"userone@gmail.com\",\n            \"role\": \"user\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Category create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODJjMTk2NWE2OWI3ZDZmZDgyOTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkwMTIyNSwiZXhwIjoxNzYyOTA0ODI1fQ.s6K-UuYsekxl3L51vluQY7ELdx2MHSAv7L_KpidsSyI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-consumer-username",
+								"value": "MER0001673345706",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "platform",
+								"value": "web",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Snacks\",\r\n    \"description\":\"admin One Category\"\r\n    // \"userOne\",\r\n    // \"email\": \"userOne@gmail.com\",\r\n    // \"password\": \"userOne@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/category/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzN2M1NDY1ZWNhOGMyMWE3NzQwY2UiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2Mjg5Nzg2NiwiZXhwIjoxNzYyOTAxNDY2fQ.wWtuHvkMzja4P9FVqYb78qYY5l5DxfB2Ijf6Hnd6xQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/category/list?search_term=poultry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"category",
+								"list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search_term",
+									"value": "poultry"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzN2M1NDY1ZWNhOGMyMWE3NzQwY2UiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkwMzE4MCwiZXhwIjoxNzYyOTA2NzgwfQ.oQhJ2f4QXSx3j6Nda2feENQ-FOVwL5KwwiiTk3pQWc0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/category/delete/CATSsovWRwxkThUW",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"category",
+								"delete",
+								"CATSsovWRwxkThUW"
+							],
+							"query": [
+								{
+									"key": "category_no",
+									"value": "CATA5Cjmw0qw7qJD",
+									"disabled": true
+								},
+								{
+									"key": "search_term",
+									"value": "lays",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzN2M1NDY1ZWNhOGMyMWE3NzQwY2UiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkzNjcwMCwiZXhwIjoxNzYyOTQwMzAwfQ.0T6bJsXEvFzuaQKabhzjQV-VJ6NotENXAepbsFMLynM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Snacks\",\r\n    \"description\":\"Admin One Category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/category/update/CATA5Cjmw0qw7qJD",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"category",
+								"update",
+								"CATA5Cjmw0qw7qJD"
+							],
+							"query": [
+								{
+									"key": "category_no",
+									"value": "CATA5Cjmw0qw7qJD",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "product create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODJjMTk2NWE2OWI3ZDZmZDgyOTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkwMTIyNSwiZXhwIjoxNzYyOTA0ODI1fQ.s6K-UuYsekxl3L51vluQY7ELdx2MHSAv7L_KpidsSyI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Kurkure\",\r\n    \"price\":\"200.18\",\r\n    \"quantity\":\"10\",\r\n    \"quantity_type\":\"count\",\r\n    \"category_id\":\"CATA5Cjmw0qw7qJD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODFkZTk2NWE2OWI3ZDZmZDgyOTMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2Mjg5OTA3MywiZXhwIjoxNzYyOTAyNjczfQ.nUkffpfqXbu6WQ-QQAjRVgVqaKQiGFpIBV664xHUXFs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/list?limit=1&page=1&quantity_type=count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "search_term",
+									"value": "curry",
+									"disabled": true
+								},
+								{
+									"key": "quantity_type",
+									"value": "count"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODFkZTk2NWE2OWI3ZDZmZDgyOTMiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2Mjg5OTA3MywiZXhwIjoxNzYyOTAyNjczfQ.nUkffpfqXbu6WQ-QQAjRVgVqaKQiGFpIBV664xHUXFs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/detail/PRDpKCgN1ShONfkH",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"detail",
+								"PRDpKCgN1ShONfkH"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "overall product list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODJjMTk2NWE2OWI3ZDZmZDgyOTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkwMTIyNSwiZXhwIjoxNzYyOTA0ODI1fQ.s6K-UuYsekxl3L51vluQY7ELdx2MHSAv7L_KpidsSyI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/overall-product/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"overall-product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "category_no",
+									"value": "CATA5Cjmw0qw7qJD",
+									"disabled": true
+								},
+								{
+									"key": "search_term",
+									"value": "lays",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODJjMTk2NWE2OWI3ZDZmZDgyOTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkwMzg2NSwiZXhwIjoxNzYyOTA3NDY1fQ.xRWq9iYmcS8SefthXVA7-Ahe_95iaugJskmLYv2xwYo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/delete/PRDFvn6lOZlyzudj/CATSioWRwIkThUW",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"delete",
+								"PRDFvn6lOZlyzudj",
+								"CATSioWRwIkThUW"
+							],
+							"query": [
+								{
+									"key": "category_no",
+									"value": "CATA5Cjmw0qw7qJD",
+									"disabled": true
+								},
+								{
+									"key": "search_term",
+									"value": "lays",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin product list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzN2M1NDY1ZWNhOGMyMWE3NzQwY2UiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkzMzk1NywiZXhwIjoxNzYyOTM3NTU3fQ.rGroh3NMt0Xs6NjVdq8Wv3PmDWNsS85BICZOePldZOc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/admin-product/list?user_no=USRqDKGIN9Yphkxx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"admin-product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "category_no",
+									"value": "CATA5Cjmw0qw7qJD",
+									"disabled": true
+								},
+								{
+									"key": "user_no",
+									"value": "USRqDKGIN9Yphkxx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTEzODJjMTk2NWE2OWI3ZDZmZDgyOTgiLCJyb2xlIjoidXNlciIsImlhdCI6MTc2MjkzNzI0NSwiZXhwIjoxNzYyOTQwODQ1fQ.ulqZ9LkRObVvV4fyzaNDP7ZP00fKTvJspxrQM0L2Qlg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\":\"Kurkure\",\r\n    \"price\":\"200.18\",\r\n    \"quantity\":\"11\",\r\n    \"quantity_type\":\"count\",\r\n    \"category_id\":\"CATA5Cjmw0qw7qJD\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventory/product/update/PRDXM6mSryRAUNBs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventory",
+								"product",
+								"update",
+								"PRDXM6mSryRAUNBs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
