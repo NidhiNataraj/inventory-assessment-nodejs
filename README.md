@@ -63,7 +63,7 @@ The project demonstrates modular architecture, secure access control, validation
 
 1️⃣ **Clone the Repository**
 ```bash
-git clone https://github.com/<your-username>/inventory-management-api.git
+git clone https://github.com/NidhiNataraj/inventory-management-api.git
 cd inventory-management-api
 ```
 
