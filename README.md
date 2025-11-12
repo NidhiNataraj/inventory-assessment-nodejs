@@ -61,42 +61,75 @@ The project demonstrates modular architecture, secure access control, validation
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
+1️⃣ **Clone the Repository**
+```bash
+git clone https://github.com/<your-username>/inventory-management-api.git
+cd inventory-management-api
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
+2️⃣ **Install dependencies**
+```bash
+npm install
 ```
 
-## Authors
+3️⃣ **Setup Environment File**
+```bash
+Source/App/.env
+```
 
-Contributors names and contact info
+Example Contents:
+JWT_SECRET=supersecretkey123;
+DB_URL_INVENTORY=mongodb+srv://<username>:<password>@cluster0.k0lsydy.mongodb.net/Inventory
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Note:
+This project uses MongoDB Atlas Cloud, already connected via a shared instance for testing.
+If you use your own, replace the credentials above with your Atlas connection string.
+
+4️⃣ **Run the Application**
+```bash
+npm run dev
+``` 
+Server will start at:
+http://localhost:3000
+
+### Demo Credentials
+
+Use these credentials for testing:
+
+## Admin Login
+POST /api/inventory/user/admin-login
+{
+  "email": "admin@gmail.com",
+  "password": "Admin@123"
+}
+
+## User Login
+POST /api/inventory/user/login
+{
+  "email": "user@gmail.com",
+  "password": "User@123"
+}
+
+Both accounts are pre-seeded for evaluation in the connected MongoDB Atlas database.
 
 ## Version History
+1.0.0	JWT Auth, CRUD for User, Category, Product
+1.1.0	Admin dashboard with category-user filters
+1.2.0	Centralized logging and aggregation improvements
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+## Author
+
+Name: Your Name
+Role: Software Developer
+GitHub: @your-username
+
+## Tech Stack
+Node.js • Express • MongoDB • JWT • Mongoose
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License – see LICENSE.md
+.
 
 ## Acknowledgments
 
