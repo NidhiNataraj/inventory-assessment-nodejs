@@ -109,8 +109,15 @@ POST /api/inventory/user/login
   "email": "user@gmail.com",
   "password": "User@123"
 }
-
 Both accounts are pre-seeded for evaluation in the connected MongoDB Atlas database.
+
+## 🧪 Postman Collection
+
+A complete Postman collection is included for testing all endpoints (authentication, categories, and products).
+
+**File Location:**  
+`Source/Postman/Inventory_Management_API.postman_collection.json`
+
 
 ## Version History
 1.0.0	JWT Auth, CRUD for User, Category, Product
